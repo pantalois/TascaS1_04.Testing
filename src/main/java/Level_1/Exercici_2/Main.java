@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        CalculoDni calculoDni1 = new CalculoDni(12345678);
+       /* CalculoDni calculoDni1 = new CalculoDni(12345678);
         CalculoDni calculoDni2 = new CalculoDni(11111111);
         CalculoDni calculoDni3 = new CalculoDni(22222222);
         CalculoDni calculoDni4 = new CalculoDni(33333333);
@@ -18,6 +18,6 @@ public class Main {
         System.out.println(calculoDni4.getDniLetter());
         System.out.println(calculoDni5.getDniLetter());
         System.out.println(calculoDni6.getDniLetter());
-
+*/
     }
 }
