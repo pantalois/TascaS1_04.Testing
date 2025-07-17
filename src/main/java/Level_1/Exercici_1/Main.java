@@ -8,16 +8,16 @@ public class Main {
 
         System.out.println("1. Adding books to the library:");
         try {
-            library.addBook(new Book("The Great Gatsby", "F. Scott Fitzgerald"));
+            library.addBook(new Book("The Great Gatsby"));
             System.out.println("   Added: The Great Gatsby");
 
-            library.addBook(new Book("To Kill a Mockingbird", "Harper Lee"));
+            library.addBook(new Book("To Kill a Mockingbird"));
             System.out.println("   Added: To Kill a Mockingbird");
 
-            library.addBook(new Book("1984", "George Orwell"));
+            library.addBook(new Book("1984"));
             System.out.println("   Added: 1984");
 
-            library.addBook(new Book("Pride and Prejudice", "Jane Austen"));
+            library.addBook(new Book("Pride and Prejudice"));
             System.out.println("   Added: Pride and Prejudice");
 
         } catch (IllegalArgumentException e) {
@@ -38,7 +38,7 @@ public class Main {
 
         System.out.println("\n4. Trying to add a duplicate book:");
         try {
-            library.addBook(new Book("1984", "Another Author"));
+            library.addBook(new Book("1984"));
             System.out.println("   Added duplicate");
         } catch (IllegalArgumentException e) {
             System.out.println("   Error: " + e.getMessage());
@@ -46,7 +46,7 @@ public class Main {
 
         System.out.println("\n5. Adding a book at specific position:");
         try {
-            library.addBookAtPosition(new Book("Brave New World", "Aldous Huxley"), 2);
+            library.addBookAtPosition(new Book("Brave New World"), 2);
             System.out.println("   Added 'Brave New World' at position 2");
             System.out.println("   Note: The list will be re-sorted automatically");
         } catch (Exception e) {
@@ -87,7 +87,7 @@ public class Main {
 
         System.out.println("\n   Trying to add book at negative position:");
         try {
-            library.addBookAtPosition(new Book("Invalid", "Position"), -1);
+            library.addBookAtPosition(new Book("Invalid"), -1);
         } catch (IndexOutOfBoundsException e) {
             System.out.println("   Caught exception: " + e.getMessage());
         }
@@ -104,8 +104,7 @@ public class Main {
     private static void displayAllBooks(Library library) {
         int position = 0;
         for (Book book : library.getBooks()) {
-            System.out.println("   [" + position + "] " + book.getTitle() +
-                    " by " + book.getAuthor());
+            System.out.println("   [" + position + "] " + book.getTitle());
             position++;
         }
     }
