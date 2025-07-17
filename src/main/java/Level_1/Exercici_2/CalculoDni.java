@@ -7,7 +7,7 @@ import java.util.List;
 
 
 public class CalculoDni {
-    int dniNumber;
+    private int dniNumber;
 
     public CalculoDni(int dniNumber) {
         this.dniNumber = dniNumber;

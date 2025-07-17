@@ -21,18 +21,18 @@ public class LibraryTest {
 
     @Test
     public void testSizeAfterInsertingBooks() {
-        library.addBook(new Book("Don Quixote", "Cervantes"));
-        library.addBook(new Book("1984", "George Orwell"));
-        library.addBook(new Book("One Hundred Years of Solitude", "García Márquez"));
+        library.addBook(new Book("Don Quixote"));
+        library.addBook(new Book("1984"));
+        library.addBook(new Book("One Hundred Years of Solitude"));
 
         assertEquals(3, library.getSize());
     }
 
     @Test
     public void testBookInCorrectPosition() {
-        library.addBook(new Book("Don Quixote", "Cervantes"));
-        library.addBook(new Book("1984", "George Orwell"));
-        library.addBook(new Book("One Hundred Years of Solitude", "García Márquez"));
+        library.addBook(new Book("Don Quixote"));
+        library.addBook(new Book("1984"));
+        library.addBook(new Book("One Hundred Years of Solitude"));
 
         assertEquals("1984", library.getTitleByPosition(0));
         assertEquals("Don Quixote", library.getTitleByPosition(1));
@@ -41,10 +41,10 @@ public class LibraryTest {
 
     @Test
     public void testNoDuplicates() {
-        library.addBook(new Book("Don Quixote", "Cervantes"));
+        library.addBook(new Book("Don Quixote"));
 
         assertThrows(IllegalArgumentException.class, () -> {
-            library.addBook(new Book("Don Quixote", "Other Author"));
+            library.addBook(new Book("Don Quixote"));
         });
 
         assertEquals(1, library.getSize());
@@ -52,8 +52,8 @@ public class LibraryTest {
 
     @Test
     public void testRetrieveTitleByPosition() {
-        library.addBook(new Book("Harry Potter", "J.K. Rowling"));
-        library.addBook(new Book("The Hobbit", "Tolkien"));
+        library.addBook(new Book("Harry Potter"));
+        library.addBook(new Book("The Hobbit"));
 
         assertEquals("Harry Potter", library.getTitleByPosition(0));
         assertEquals("The Hobbit", library.getTitleByPosition(1));
@@ -66,7 +66,7 @@ public class LibraryTest {
     @Test
     public void testAddingBookModifiesList() {
         int initialSize = library.getSize();
-        library.addBook(new Book("New Book", "New Author"));
+        library.addBook(new Book("New Book"));
 
         assertEquals(initialSize + 1, library.getSize());
         assertTrue(library.getBooks().stream()
@@ -75,8 +75,8 @@ public class LibraryTest {
 
     @Test
     public void testRemovingBookDecreasesSize() {
-        library.addBook(new Book("Book 1", "Author 1"));
-        library.addBook(new Book("Book 2", "Author 2"));
+        library.addBook(new Book("Book 1"));
+        library.addBook(new Book("Book 2"));
 
         int initialSize = library.getSize();
         boolean removed = library.removeBookByTitle("Book 1");
@@ -87,9 +87,9 @@ public class LibraryTest {
 
     @Test
     public void testListRemainsAlphabeticallySorted() {
-        library.addBook(new Book("Zebra", "Author Z"));
-        library.addBook(new Book("Alpha", "Author A"));
-        library.addBook(new Book("Middle", "Author M"));
+        library.addBook(new Book("Zebra"));
+        library.addBook(new Book("Alpha"));
+        library.addBook(new Book("Middle"));
 
         List<Book> list = library.getBooks();
         assertEquals("Alpha", list.get(0).getTitle());
@@ -102,7 +102,7 @@ public class LibraryTest {
         assertEquals("Zebra", list.get(1).getTitle());
 
         // Add a new book and verify order
-        library.addBook(new Book("Beta", "Author B"));
+        library.addBook(new Book("Beta"));
         list = library.getBooks();
         assertEquals("Alpha", list.get(0).getTitle());
         assertEquals("Beta", list.get(1).getTitle());
@@ -111,10 +111,10 @@ public class LibraryTest {
 
     @Test
     public void testAddBookAtSpecificPosition() {
-        library.addBook(new Book("A", "Author A"));
-        library.addBook(new Book("C", "Author C"));
+        library.addBook(new Book("A"));
+        library.addBook(new Book("C"));
 
-        library.addBookAtPosition(new Book("B", "Author B"), 1);
+        library.addBookAtPosition(new Book("B"), 1);
 
         assertEquals("A", library.getTitleByPosition(0));
         assertEquals("B", library.getTitleByPosition(1));
