@@ -58,4 +58,12 @@ public class Library {
     public int getSize() {
         return books.size();
     }
+
+     public void displayAllBooks() {
+        int position = 0;
+        for (Book book : this.books) {
+            System.out.println("   [" + position + "] " + book.getTitle());
+            position++;
+        }
+    }
 }

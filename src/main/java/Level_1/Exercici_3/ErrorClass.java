@@ -11,6 +11,5 @@ public class ErrorClass {
 
     public void addData(int pos) throws ArrayIndexOutOfBoundsException{
             errorArray[pos] = 42;
-            throw new ArrayIndexOutOfBoundsException();
     }
 }
