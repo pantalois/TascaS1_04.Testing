@@ -23,7 +23,7 @@ public class Library {
     }
 
     public List<Book> getBooks() {
-        return new ArrayList<>(books); // Return a copy to avoid external modifications
+        return new ArrayList<>(books);
     }
 
     public String getTitleByPosition(int position) {
